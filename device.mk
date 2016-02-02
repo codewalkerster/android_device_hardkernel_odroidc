@@ -141,6 +141,7 @@ PRODUCT_COPY_FILES += \
     device/hardkernel/common/idc/pixcir168.idc:system/usr/idc/pixcir168.idc \
     device/hardkernel/common/idc/ssd253x-ts.idc:system/usr/idc/ssd253x-ts.idc \
     device/hardkernel/common/idc/Vendor_222a_Product_0001.idc:system/usr/idc/Vendor_222a_Product_0001.idc \
+    device/hardkernel/common/idc/Vendor_dead_Product_beef.idc:system/usr/idc/Vendor_04d8_Product_0c03.idc \
     device/hardkernel/common/idc/Vendor_dead_Product_beef.idc:system/usr/idc/Vendor_dead_Product_beef.idc
 
 #cp kl file for adc keyboard
