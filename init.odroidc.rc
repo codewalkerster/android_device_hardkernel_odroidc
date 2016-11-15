@@ -407,3 +407,7 @@ service su_daemon /system/xbin/su --daemon
     group root
     oneshot
 
+on property:init.svc.bootanim=stopped
+    write /sys/bus/hid/drivers/hid-generic/unbind 0003:04D8:0C03.0001
+    write /sys/bus/hid/drivers/hid-generic/bind 0003:04D8:0C03.0001
+
