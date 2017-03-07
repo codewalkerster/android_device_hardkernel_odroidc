@@ -44,6 +44,7 @@ outputmode=$mode
 
 case $mode in
     800x480*)   fbset -fb /dev/graphics/fb0 -g 800 480 800 960 32 ;;
+    480x800*)   fbset -fb /dev/graphics/fb0 -g 480 800 480 1600 32 ;;
     vga*)       fbset -fb /dev/graphics/fb0 -g 640 480 640 960 32 ;;
     480*)       fbset -fb /dev/graphics/fb0 -g 720 480 720 960 32 ;;
     800x600p60*)    fbset -fb /dev/graphics/fb0 -g 800 600 800 1200 32 ;;
@@ -72,6 +73,7 @@ echo 1 > /sys/class/graphics/fb0/freescale_mode
 case $outputmode in
     vga*) M="0 0 639 749" ;;
     800x480*) M="0 0 799 479" ;;
+    480x800*) M="0 0 479 799" ;;
     800x600p60*) M="0 0 799 599" ;;
     1024x600p60h*) M="0 0 1023 599" ;;
     1024x768p60h*) M="0 0 1023 767" ;;
