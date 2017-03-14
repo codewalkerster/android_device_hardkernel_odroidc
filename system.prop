@@ -233,4 +233,4 @@ config.enable_quickboot=true
 
 #has spdif output
 ro.hdmi.spdif=true
-
+touchscreen.reverse=false
