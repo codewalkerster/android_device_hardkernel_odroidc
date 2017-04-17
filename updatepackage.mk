@@ -14,6 +14,7 @@ $(PRODUCT_OUT)/updatepackage.zip: $(PRODUCT_OUT)/kernel rootsystem recovery
 	cp -a $(PRODUCT_OUT)/meson8b_odroidc.dtb $(PKGDIR)
 	cp -a $(PRODUCT_OUT)/u-boot.bin $(PKGDIR)
 	cp -a $(PRODUCT_OUT)/rootsystem $(PKGDIR)
+	find $(PKGDIR)/rootsystem -type l | xargs rm -rf
 	cp -a $(PRODUCT_OUT)/recovery.img $(PKGDIR)
 	cp -a $(PRODUCT_OUT)/system/bin/updater \
 		$(PKGDIR)/META-INF/com/google/android/update-binary
