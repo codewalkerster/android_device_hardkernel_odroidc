@@ -117,6 +117,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.odroidc
 
+# VU8 backlight
+PRODUCT_PACKAGES += \
+    lights.odroidc
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     bluetooth.default \
