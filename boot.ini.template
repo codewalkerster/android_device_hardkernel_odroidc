@@ -72,7 +72,9 @@ setenv touch_invert_x "false"
 setenv touch_invert_y "false"
 
 # Enable backlight_pwm
-# backlight_pwm=yes, no, invert
+# disable : backlight "no"
+# ODROID-VU5/7 : backlight "yes"
+# ODROID-VU8 : backlight "invert"
 setenv backlight_pwm "no"
 
 # Booting
