@@ -175,6 +175,9 @@ PRODUCT_COPY_FILES += \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 endif
 
+PRODUCT_COPY_FILES += \
+	device/hardkernel/odroidc/odroid-usbgps.xml:root/odroid-usbgps.xml
+
 ifneq ($(wildcard frameworks/base/Android.mk),)
 # Overlay for device specific settings
 DEVICE_PACKAGE_OVERLAYS := $(TARGET_PRODUCT_DIR)/overlay
