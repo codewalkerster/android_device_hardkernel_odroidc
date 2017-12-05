@@ -5,6 +5,7 @@ ODROIDC-UBOOT-CONFIG
 # supported by your TV or monitor.
 #    Symbol           | Resolution
 # --------------------+-------------
+#    "480x320p60hz"   | 480x320
 #    "vga"            | 640x480
 #    "480p"           | 720x480
 #    "576p"           | 720x576
