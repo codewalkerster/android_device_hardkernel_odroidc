@@ -282,10 +282,6 @@ on boot
     chmod 0666 /sys/class/display/mode
     chmod 0666 /sys/class/audiodsp/digital_raw
 
-    insmod /system/lib/modules/compat.ko
-    insmod /system/lib/modules/cfg80211.ko
-    insmod /system/lib/modules/mac80211.ko
-
     write /proc/sys/kernel/ctrl-alt-del 0
 
 on fs
