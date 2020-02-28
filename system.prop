@@ -235,4 +235,4 @@ config.enable_quickboot=true
 ro.hdmi.spdif=true
 touchscreen.reverse=false
 
-kiosk_mode=true
+kiosk_mode=false
