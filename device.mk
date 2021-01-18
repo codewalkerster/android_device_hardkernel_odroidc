@@ -130,6 +130,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.odroidc
 
+# usb_modeswitch
+PRODUCT_PACKAGES += \
+    usb_modeswitch
+
 PRODUCT_COPY_FILES += \
     device/hardkernel/common/tools/AmlHostsTool:system/bin/AmlHostsTool
 
@@ -177,6 +181,9 @@ endif
 
 PRODUCT_COPY_FILES += \
 	device/hardkernel/odroidc/odroid-usbgps.xml:root/odroid-usbgps.xml
+
+PRODUCT_COPY_FILES += \
+    device/hardkernel/odroidc/usb_modeswitch.conf.template:system/etc/usb_modeswitch.conf.template
 
 ifneq ($(wildcard frameworks/base/Android.mk),)
 # Overlay for device specific settings
