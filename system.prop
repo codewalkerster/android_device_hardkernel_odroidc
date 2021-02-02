@@ -236,3 +236,6 @@ ro.hdmi.spdif=true
 touchscreen.reverse=false
 
 kiosk_mode=false
+
+bt.vendor.name=broadcom
+#bt.vendor.name=realtek

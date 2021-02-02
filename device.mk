@@ -203,6 +203,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rt2870.bin:root/lib/firmware/rt2870.bin
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rtl8821c_fw.bin:system/etc/firmware/rtlbt/rtl8821c_fw.bin \
+    $(LOCAL_PATH)/rtl8821c_config.bin:system/etc/firmware/rtlbt/rtl8821c_config.bin
+
 $(call inherit-product-if-exists, external/libusb/usbmodeswitch/CopyConfigs.mk)
 $(call inherit-product-if-exists, hardware/amlogic/libril/config/Copy.mk)
 
