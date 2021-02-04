@@ -237,5 +237,5 @@ touchscreen.reverse=false
 
 kiosk_mode=false
 
-bt.vendor.name=broadcom
-#bt.vendor.name=realtek
+#prop example [bt.vendor.name] [broadcom]or[realtek]
+bt.vendor.name=realtek
