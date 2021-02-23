@@ -5,6 +5,10 @@ wifi_enabled=0
 for x in $(lsusb); do
 	echo $x
 	if [[ "$x" == *"16b4:"* ]]; then
+		#USB OTG Power reset
+		echo 0 > /sys/devices/lm0/vbus
+		sleep 1
+		echo 1 > /sys/devices/lm0/vbus
 
 		result=`getprop wlan.driver.status`
 
@@ -17,19 +21,15 @@ for x in $(lsusb); do
 			done
 		fi
 
-		echo 4 > /sys/class/gpio/export
-		echo out > /sys/class/gpio/gpio4/direction
+		#USB Host Power reset
+		echo 0 > /sys/devices/lm1/buspower
 		sleep 1
-		echo 0 > /sys/class/gpio/gpio4/value
-		sleep 1
-		echo 1 > /sys/class/gpio/gpio4/value
-		echo 4 > /sys/class/gpio/unexport
+		echo 1 > /sys/devices/lm1/buspower
 
 		sleep 3
 
-		if [ "$result" == "unloaded" ] && [ $wifi_enabled -eq 1]; then
+		if [ "$result" == "unloaded" ] && [ $wifi_enabled -eq 1 ]; then
 			svc wifi enable
 		fi
-
 	fi
 done
