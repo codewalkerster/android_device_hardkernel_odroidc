@@ -1,13 +1,20 @@
 #!/bin/sh
 
+wifi_enabled=0
+
 for x in $(lsusb); do
 	echo $x
-	if [ "$x" == "16b4:0703" ]; then
+	if [[ "$x" == *"16b4:"* ]]; then
 
 		result=`getprop wlan.driver.status`
 
 		if [ "$result" == "ok" ]; then
+			wifi_enabled=1
 			svc wifi disable
+			while [ "$result" != "unloaded" ]; do
+				sleep 1
+				result=`getprop wlan.driver.status`
+			done
 		fi
 
 		echo 4 > /sys/class/gpio/export
@@ -18,8 +25,9 @@ for x in $(lsusb); do
 		echo 1 > /sys/class/gpio/gpio4/value
 		echo 4 > /sys/class/gpio/unexport
 
-		if [ "$result" == "ok" ]; then
-			sleep 3
+		sleep 3
+
+		if [ "$result" == "unloaded" ] && [ $wifi_enabled -eq 1]; then
 			svc wifi enable
 		fi
 
