@@ -136,7 +136,7 @@ service rotation /system/bin/rotation.sh
     disabled
     oneshot
 
-on property:dev.bootcomplete=1
+on property:init.svc.usb_reset=stopped
     start makebootini
 
 service usb_reset /system/bin/usb_reset.sh
